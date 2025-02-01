@@ -52,36 +52,30 @@ function base_path($path){
 }
 
 function view($path, $attributes = []){
-
+  
   extract($attributes);
-
+  
   require base_path('views/' . $path);
   
 }
 
+function base_uri($path){
+  
+  return '/php/learn-from-english/public' .  $path;
 
-function login($user){
-  $_SESSION['user'] = [
-    'email' => $user['email'],
-  ];
-
-  session_regenerate_id(true);
 }
 
-function logout(){
+function redirect($path){
   
-  $_SESSION = [];
-  session_destroy();
+  $has_base_uri = (bool) strpos($path, MAIN_WEBSITE_URL);
+  
+  $has_base_uri ? $uri  = $path : $uri = base_uri($path);
+  
+  header("Location: {$uri}");
 
-  $params = session_get_cookie_params();
-  setcookie(
-    session_name(),
-    '',
-    time() - 3600,
-    $params['path'],
-    $params['domain'],
-    $params['secure'],
-    $params['httponly']
-  );
+  exit();
+}
 
+function old($key, $default = ''){
+  return Core\Session::get('old')[$key] ?? $default;
 }

@@ -47,5 +47,4 @@ $db -> query("UPDATE notes SET body = :body WHERE id = :id",[
 ]);
 
 // redirect user to the notes index page
-header('location: /php/learn-from-english/public/notes');
-die();
+redirect("/notes");

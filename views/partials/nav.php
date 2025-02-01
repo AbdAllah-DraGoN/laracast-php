@@ -14,12 +14,12 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="/php/learn-from-english/public/" class="<?= urlIs("/") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-              <a href="/php/learn-from-english/public/about" class="<?= urlIs("/about") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+              <a href=<?= base_uri('/') ?> class="<?= urlIs("/") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+              <a href=<?= base_uri('/about') ?>  class="<?= urlIs("/about") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
               <?php if ($_SESSION['user'] ?? false) :?>
-                <a href="/php/learn-from-english/public/notes" class="<?= urlIs("/notes") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes</a>
+                <a href=<?= base_uri('/notes') ?>  class="<?= urlIs("/notes") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes</a>
               <?php endif; ?>
-              <a href="/php/learn-from-english/public/contact" class="<?= urlIs("/contact") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+              <a href=<?= base_uri('/contact') ?>  class="<?= urlIs("/contact") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
             </div>
           </div>
         </div>
@@ -50,8 +50,8 @@
               <?php else :?>
                     
                 <div class="flex space-x-4">
-                  <a href="/php/learn-from-english/public/register" class="<?= urlIs("/register") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Register</a>
-                  <a href="/php/learn-from-english/public/login" class="<?= urlIs("/login") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Login</a>
+                  <a href=<?= base_uri('/register') ?>  class="<?= urlIs("/register") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Register</a>
+                  <a href=<?= base_uri('/login') ?>  class="<?= urlIs("/login") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Login</a>
                   
                 </div>
                 
@@ -82,12 +82,12 @@
 
                 <form
                   method="POST"
-                  action="/php/learn-from-english/public/session" 
+                  action=<?= base_uri('/session') ?>  
                   class="flex align-center"
                 >
                   <input type="hidden" name="_method" value="DELETE">
                   <button
-                  href="/php/learn-from-english/public/logout" 
+                  href=<?= base_uri('/logout') ?>  
                     class="<?= urlIs("/logout") ? 'bg-gray-900 text-white':'text-gray-300 hover:bg-gray-700 hover:text-white'?> rounded-md px-3 py-2 text-sm font-medium"
                     
                   >

@@ -1,0 +1,16 @@
+{
+  "name": "abdallahdragon/learn-from-english",
+  "authors": [
+    {
+      "name": "AbdAllah-DraGoN",
+      "email": "abdallahdragon72@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}

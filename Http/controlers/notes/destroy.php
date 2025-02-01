@@ -14,7 +14,5 @@ authorize($note['user_id'] === $currentUserId);
   
 $db -> query("DELETE FROM notes WHERE id = :id ",['id' => $_POST['id']]) ;
 
-header('location: /php/learn-from-english/public/notes');
-
-exit();
+redirect("/notes");
 

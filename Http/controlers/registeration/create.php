@@ -1,8 +1,7 @@
 <?php
 
 if ($_SESSION['user'] ?? false) {
-  header('location: /php/learn-from-english/public');
-  exit();
+  redirect("/");
 }
 
 view("registeration/create.view.php");

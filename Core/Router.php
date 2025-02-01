@@ -62,14 +62,17 @@ class Router {
         
         Middleware::resolve($route['middleware']);
 
-        return require base_path($route['controller']);
+        return require base_path('Http/controlers/' . $route['controller']);
       }
     }
 
     $this->abort(404);
   }
 
-  
+  public function previousUrl()
+  {
+    return $_SERVER['HTTP_REFERER'] ?? '/';
+  }
 
   protected function abort($code = 404 ){
 

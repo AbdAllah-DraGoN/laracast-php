@@ -25,7 +25,8 @@
               type="email"
               name="email" 
               id="email" 
-              value="<?= $_POST['email'] ?? '' ?>"
+              value="<?= old('email') ?>"
+              placeholder="Email address"
               autocomplete="email" 
               class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             >
@@ -39,8 +40,7 @@
               type="password" 
               name="password" 
               id="password" 
-              value="<?= $_POST['password'] ?? '' ?>"
-              autocomplete="current-password" 
+              placeholder="Password"
               class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             >
           </div>
@@ -56,6 +56,9 @@
         </div>
         <?php if(isset($errors['email'])): ?>
           <p class="text-red-700 text-lg mt-2"> <?= $errors['email'] ?></p>
+        <?php endif;?>
+        <?php if(isset($errors['password'])): ?>
+          <p class="text-red-700 text-lg mt-2"> <?= $errors['password'] ?></p>
         <?php endif;?>
       </form>
 

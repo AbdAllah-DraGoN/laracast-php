@@ -31,5 +31,4 @@ $db -> query($query,[
   'user_id' => 8
 ]);
 
-header('location: /php/learn-from-english/public/notes');
-die();
+redirect("/notes");
